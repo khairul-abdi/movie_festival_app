@@ -7,26 +7,16 @@
 - Postgresql
 - Orm Gorm
 
-## Prepare
+## Usage
 
-# Usage
+- First thing first we have to create new file .env copy from .env.example
+- create database postgresql with the same name like directory package/database/config.go
+- install all of the dependencies by typing this command in terminal :
+  `go mod tidy`
+- Then we are ready to execute the server by this following command :
+  `go run main.go`
 
-First thing first we have to create db :
+## Documentation
 
-```
-    create database postgresql with the same name like dicrectory package/database/config.go
-```
-
-and then install all of the dependencies by typing this command in terminal :
-
-```
-    go mod tidy
-```
-
-and then we are ready to execute the server by this following command :
-
-```
-    go run main.go
-```
-
-# Features
+- Link Document: https://documenter.getpostman.com/view/9499321/2sAXjDcuZm
+- Or can run Collection in local with file `movie_festival_app (lion parcel).postman_collection.json`

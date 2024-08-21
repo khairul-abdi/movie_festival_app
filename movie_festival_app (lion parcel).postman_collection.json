@@ -1,0 +1,1187 @@
+{
+	"info": {
+		"_postman_id": "df0f6389-960e-421d-8963-a2647024b8b4",
+		"name": "movie_festival_app (lion parcel)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9499321",
+		"_collection_link": "https://lunar-trinity-131536.postman.co/workspace/Learn_GO~2a1b8a42-5ee3-43eb-9854-a7efee890aac/collection/9499321-df0f6389-960e-421d-8963-a2647024b8b4?action=share&source=collection_link&creator=9499321"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"khairul_user@gmail.com\",\r\n    \"username\": \"khairul abdi user\",\r\n    \"password\":\"123456\",\r\n    \"age\":9,\r\n    \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9001/auth/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"auth",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khairulabdis@gmail.com\",\r\n    \"username\": \"khairul abdi s\",\r\n    \"password\":\"123456\",\r\n    \"age\":9,\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/auth/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"auth",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 09:50:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "144"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 201,\n    \"data\": {\n        \"age\": 9,\n        \"email\": \"khairulabdis@gmail.com\",\n        \"id\": 8,\n        \"role\": \"admin\",\n        \"username\": \"khairul abdi s\"\n    },\n    \"message\": \"Success insert data\"\n}"
+				},
+				{
+					"name": "ok user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khairul_user@gmail.com\",\r\n    \"username\": \"khairul abdi user\",\r\n    \"password\":\"123456\",\r\n    \"age\":9,\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/auth/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"auth",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 13:06:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 201,\n    \"data\": {\n        \"age\": 9,\n        \"email\": \"khairul_user@gmail.com\",\n        \"id\": 9,\n        \"role\": \"user\",\n        \"username\": \"khairul abdi user\"\n    },\n    \"message\": \"Success insert data\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"khairulabdis@gmail.com\",\r\n  \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/auth/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"auth",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok login role user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"khairul_user@gmail.com\",\r\n  \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/auth/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 13:07:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWlydWxfdXNlckBnbWFpbC5jb20iLCJpZCI6OSwicm9sZSI6InVzZXIifQ.aPOreV-bK1dkWz8rKYTewmwOmp_JeU5BMO_nyX775v4\"\n    },\n    \"message\": \"Success Create Token\"\n}"
+				},
+				{
+					"name": "invalid email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"khairulabdi@gmail.com\",\r\n  \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/auth/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 08:05:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 401,\n    \"data\": null,\n    \"message\": \"invalid email\"\n}"
+				},
+				{
+					"name": "email not registered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"khairulabdi@gmail.com\",\r\n  \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/auth/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 08:11:54 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 401,\n    \"data\": null,\n    \"message\": \"email not registered\"\n}"
+				},
+				{
+					"name": "ok login role admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"khairulabdis@gmail.com\",\r\n  \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/auth/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 14:19:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "221"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWlydWxhYmRpc0BnbWFpbC5jb20iLCJpZCI6OCwicm9sZSI6ImFkbWluIn0.SQp0siDfRYqsfnhLpuOOXMtgiZ2BmQ5zZEhR4Il1bAw\"\n    },\n    \"message\": \"Success Create Token\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5pYUBnbWFpbC5jb20iLCJpZCI6MX0.-vOyTVyHebzytENTNub9xB8cH5lXD3jpR0vWusCZaVU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/user/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/user/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 07:59:46 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "64"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Your user has been successfully deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWlydWxhYmRpc0BnbWFpbC5jb20iLCJpZCI6OCwicm9sZSI6ImFkbWluIn0.SQp0siDfRYqsfnhLpuOOXMtgiZ2BmQ5zZEhR4Il1bAw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"khairulabdiadmin@gmail.com\",\r\n    \"username\": \"khairul abdi admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9001/user/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"user",
+						"8"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request PUT 'http://localhost:9001/users/8' \\\r\n--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5pYUBnbWFpbC5jb20iLCJpZCI6OH0.bMWIYZRb7g78dgKr_0YfkWmYGLMFFfNMQcHMbfRJXww' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"email\": \"niakurniati@gmail.com\",\r\n    \"username\": \"nia kurniati\"\r\n}'"
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khairulabdiadmin@gmail.com\",\r\n    \"username\": \"khairul abdi admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/user/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"user",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 15:25:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "186"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"age\": 9,\n        \"email\": \"khairulabdiadmin@gmail.com\",\n        \"id\": 8,\n        \"updated_at\": \"2024-08-21T22:25:32.5611066+07:00\",\n        \"username\": \"khairul abdi admin\"\n    },\n    \"message\": \"Success Update user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List All Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWlydWxfdXNlckBnbWFpbC5jb20iLCJpZCI6OSwicm9sZSI6InVzZXIifQ.aPOreV-bK1dkWz8rKYTewmwOmp_JeU5BMO_nyX775v4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"wolver\",\r\n    \"description\":\"seru\",\r\n    \"artist\":\"hug\",\r\n    \"genre\": \"action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9001/movie/list-all-movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"list-all-movie"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 13:48:14 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"Title\": \"Wolverine\",\n            \"Description\": \"\",\n            \"Duration\": \"2024-08-20T20:39:02.846831+07:00\",\n            \"Artists\": [\n                \"hug jackman\"\n            ],\n            \"Genres\": [\n                \"action\"\n            ],\n            \"WatchUrl\": \"www.youtube.com\",\n            \"Viewed\": null,\n            \"Voted\": null,\n            \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n            \"UpdatedAt\": \"0001-01-01T00:00:00Z\"\n        }\n    ],\n    \"message\": \"Success\"\n}"
+				},
+				{
+					"name": "Get All Movies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"wolver\",\r\n    \"description\":\"seru\",\r\n    \"artist\":\"hug\",\r\n    \"genre\": \"action\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/movie/list-all-movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie",
+								"list-all-movie"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 06:31:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "321"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Wolverine\",\n            \"description\": \"Movie Seru Kali YA WKWKKW\",\n            \"duration\": \"02:20:00\",\n            \"artists\": [\n                \"hug jackman\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1,\n                2,\n                3\n            ],\n            \"voted\": [\n                1,\n                2\n            ],\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"2024-08-20T23:06:45.378835+07:00\"\n        }\n    ],\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWlydWxhYmRpQGdtYWlsLmNvbSIsImlkIjo2LCJyb2xlIjoiYWRtaW4ifQ.Z_yn9oa5n2Cw0h4WLI_zIT2ippgKuHMVZVQgqZ5QPDk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Love The Next Door\",\r\n    \"description\": \"Movie Seru KALEE\",\r\n    \"duration\": \"02:00:00\",\r\n    \"artists\": [\r\n        \"chris evan\",\r\n        \"tom\"\r\n    ],\r\n    \"genres\": [\r\n        \"romance\",\r\n        \"comedy\"\r\n    ],\r\n    \"watch_url\": \"youtube.com\",\r\n    \"viewed\": [\r\n        0\r\n    ],\r\n    \"voted\": []\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Jack Sparraw\",\r\n    \"description\": \"Movie Seru\",\r\n    \"duration\": \"02:00:00\",\r\n    \"artists\": [\r\n        \"jack\",\r\n        \"sparrow\"\r\n    ],\r\n    \"genres\": [\r\n        \"advendute\"\r\n    ],\r\n    \"watch_url\": \"youtube.com\",\r\n    \"viewed\": [\r\n        1\r\n    ],\r\n    \"voted\": []\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 15:20:07 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Movie",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Wolverine\",\r\n    \"description\": \"Movie Seru Kali YA WKWKKW\",\r\n    \"duration\": \"02:20:00\",\r\n    \"artists\": [\r\n        \"hug jackman\"\r\n    ],\r\n    \"genres\": [\r\n        \"advendute\"\r\n    ],\r\n    \"watch_url\": \"youtube.com\",\r\n    \"viewed\": [\r\n        1,2\r\n    ],\r\n    \"voted\": [1,2]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/movie/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Wolverine\",\r\n    \"description\": \"Movie Seru Kali YA WKWKKW\",\r\n    \"duration\": \"02:20:00\",\r\n    \"artists\": [\r\n        \"hug jackman\"\r\n    ],\r\n    \"genres\": [\r\n        \"advendute\"\r\n    ],\r\n    \"watch_url\": \"youtube.com\",\r\n    \"viewed\": [\r\n        1,2\r\n    ],\r\n    \"voted\": [1,2]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/movie/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 16:06:45 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get ALL Most Viewed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/movie/most-viewed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"most-viewed"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/movie/most-viewed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie",
+								"most-viewed"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 18:20:19 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1152"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Wolverine\",\n            \"description\": \"Movie Seru Kali YA WKWKKW\",\n            \"duration\": \"02:20:00\",\n            \"artists\": [\n                \"hug jackman\"\n            ],\n            \"genres\": [\n                \"advendute\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1,\n                2,\n                3\n            ],\n            \"voted\": [\n                1,\n                2\n            ],\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"2024-08-20T23:06:45.378835+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"IronMan\",\n            \"description\": \"\",\n            \"duration\": \"02:00:02\",\n            \"artists\": [\n                \"Stan Lee\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"www.youtube.com\",\n            \"viewed\": [\n                1,\n                2\n            ],\n            \"voted\": [\n                1\n            ],\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Wolverine X Dead Pool\",\n            \"description\": \"Movie Seru Kali\",\n            \"duration\": \"02:40:00\",\n            \"artists\": [\n                \"hug jackman\",\n                \"ryan reynolds\"\n            ],\n            \"genres\": [\n                \"advendute\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1,\n                2\n            ],\n            \"voted\": [\n                1,\n                2\n            ],\n            \"created_at\": \"2024-08-20T22:52:22.990146+07:00\",\n            \"updated_at\": \"2024-08-20T22:52:22.990146+07:00\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Jack Sparraw\",\n            \"description\": \"Movie Seru\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"jack\",\n                \"sparrow\"\n            ],\n            \"genres\": [\n                \"advendute\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-20T22:20:07.762114+07:00\",\n            \"updated_at\": \"2024-08-20T22:20:07.762114+07:00\"\n        }\n    ],\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All By Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/movie/search-movie?page=1&limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"search-movie"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/movie/search-movie?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie",
+								"search-movie"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 02:11:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "558"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"title\": \"IronMan\",\n            \"description\": \"\",\n            \"duration\": \"02:00:02\",\n            \"artists\": [\n                \"Stan Lee\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"www.youtube.com\",\n            \"viewed\": [\n                1,\n                2\n            ],\n            \"voted\": [\n                1\n            ],\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Jack Sparraw\",\n            \"description\": \"Movie Seru\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"jack\",\n                \"sparrow\"\n            ],\n            \"genres\": [\n                \"advendute\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-20T22:20:07.762114+07:00\",\n            \"updated_at\": \"2024-08-20T22:20:07.762114+07:00\"\n        }\n    ],\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Track Movie Viewership",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWlydWxfdXNlckBnbWFpbC5jb20iLCJpZCI6OSwicm9sZSI6InVzZXIifQ.aPOreV-bK1dkWz8rKYTewmwOmp_JeU5BMO_nyX775v4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/movie/track-movie-viewership",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"track-movie-viewership"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/movie/track-movie-viewership",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie",
+								"track-movie-viewership"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 13:07:47 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Wolverine\",\n            \"description\": \"Movie Seru Kali YA WKWKKW\",\n            \"duration\": \"02:20:00\",\n            \"artists\": [\n                \"hug jackman\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1,\n                2,\n                3\n            ],\n            \"voted\": [\n                1,\n                2\n            ],\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"2024-08-20T23:06:45.378835+07:00\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Wolverine X Dead Pool\",\n            \"description\": \"Movie Seru Kali\",\n            \"duration\": \"02:40:00\",\n            \"artists\": [\n                \"hug jackman\",\n                \"ryan reynolds\"\n            ],\n            \"genres\": [\n                \"advendute\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1,\n                2\n            ],\n            \"voted\": [\n                1,\n                2\n            ],\n            \"created_at\": \"2024-08-20T22:52:22.990146+07:00\",\n            \"updated_at\": \"2024-08-20T22:52:22.990146+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"IronMan\",\n            \"description\": \"\",\n            \"duration\": \"02:00:02\",\n            \"artists\": [\n                \"Stan Lee\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"www.youtube.com\",\n            \"viewed\": [\n                1,\n                2\n            ],\n            \"voted\": [\n                1\n            ],\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Captain America Old\",\n            \"description\": \"Movie Seru KALEE\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"chris evan\",\n                \"tom\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-21T14:08:19.263919+07:00\",\n            \"updated_at\": \"2024-08-21T14:08:19.263919+07:00\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Captain America Old\",\n            \"description\": \"Movie Seru KALEE\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"chris evan\",\n                \"tom\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-21T14:09:13.07893+07:00\",\n            \"updated_at\": \"2024-08-21T14:09:13.07893+07:00\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Captain America Old\",\n            \"description\": \"Movie Seru KALEE\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"chris evan\",\n                \"tom\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-21T14:09:25.618142+07:00\",\n            \"updated_at\": \"2024-08-21T14:09:25.618142+07:00\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Captain America Old\",\n            \"description\": \"Movie Seru KALEE\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"chris evan\",\n                \"tom\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-21T14:14:35.360844+07:00\",\n            \"updated_at\": \"2024-08-21T14:14:35.360844+07:00\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"Captain America Old\",\n            \"description\": \"Movie Seru KALEE\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"chris evan\",\n                \"tom\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-21T14:17:28.810501+07:00\",\n            \"updated_at\": \"2024-08-21T14:17:28.810501+07:00\"\n        },\n        {\n            \"id\": 11,\n            \"title\": \"Captain America Old\",\n            \"description\": \"Movie Seru KALEE\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"chris evan\",\n                \"tom\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-21T14:24:14.743285+07:00\",\n            \"updated_at\": \"2024-08-21T14:24:14.743285+07:00\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Jack Sparraw\",\n            \"description\": \"Movie Seru\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"jack\",\n                \"sparrow\"\n            ],\n            \"genres\": [\n                \"advendute\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-20T22:20:07.762114+07:00\",\n            \"updated_at\": \"2024-08-20T22:20:07.762114+07:00\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Captain America\",\n            \"description\": \"Movie Seru KALEE\",\n            \"duration\": \"02:00:00\",\n            \"artists\": [\n                \"chris evan\",\n                \"tom\"\n            ],\n            \"genres\": [\n                \"action\"\n            ],\n            \"watch_url\": \"youtube.com\",\n            \"viewed\": [\n                1\n            ],\n            \"voted\": [],\n            \"created_at\": \"2024-08-21T10:17:07.68542+07:00\",\n            \"updated_at\": \"2024-08-21T10:17:07.68542+07:00\"\n        }\n    ],\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Vote Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWlydWxhYmRpc0BnbWFpbC5jb20iLCJpZCI6OCwicm9sZSI6ImFkbWluIn0.SQp0siDfRYqsfnhLpuOOXMtgiZ2BmQ5zZEhR4Il1bAw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/movie/vote-movie/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"vote-movie",
+						"12"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/movie/vote-movie/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"movie",
+								"vote-movie",
+								"12"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Aug 2024 14:45:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"You already vote this movie\"\n}"
+				}
+			]
+		}
+	]
+}
