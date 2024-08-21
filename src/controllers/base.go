@@ -21,6 +21,9 @@ type Controllers interface {
 	UpdateMovie(c *gin.Context)
 	GetMoviesMostViewed(c *gin.Context)
 	SearchMovies(c *gin.Context)
+	TrackMovieViewership(c *gin.Context)
+	VoteMovie(c *gin.Context)
+	UnVoteMovie(c *gin.Context)
 }
 
 func NewCtrl(uc usecases.UC) Controllers {

@@ -6,6 +6,7 @@ import (
 	"movie_festival_app/src/models"
 	"net/http"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 )
 
@@ -91,4 +92,84 @@ func (u *uc) SearchMovies(c *gin.Context, page, limit int) ([]models.Movie, stri
 	}
 
 	return res, models.Success, http.StatusOK
+}
+
+func (u *uc) TrackMovieViewership(c *gin.Context) ([]models.Movie, string, int) {
+	res, err := u.repo.TrackMovieViewership()
+	if err != nil {
+		return nil, err.Error(), http.StatusBadRequest
+	}
+
+	return res, models.Success, http.StatusOK
+}
+
+func (u *uc) VoteMovie(c *gin.Context, movieId int) (string, int) {
+	movie, statusMessage, statusCode := u.GetMovie(c, movieId)
+	if statusCode != 200 {
+		return statusMessage, statusCode
+	}
+
+	userData := c.MustGet("userData").(jwt.MapClaims)
+	userId := userData["id"].(float64)
+
+	for i := 0; i < len(movie.Voted); i++ {
+		if movie.Voted[i] != int64(userId) {
+			continue
+		} else {
+			return "You already vote this movie", http.StatusOK
+		}
+	}
+
+	movie.Voted = append(movie.Voted, int64(userId))
+
+	err := u.repo.VoteMovie(movieId, movie)
+	if err != nil {
+		return err.Error(), http.StatusBadRequest
+	}
+
+	return models.Success, http.StatusOK
+}
+
+func (u *uc) GetMovie(c *gin.Context, movieId int) (movie *models.Movie, statusMessage string, statusCode int) {
+	whereVariable := "id = ?"
+	whereValue := movieId
+	err := u.repo.FindOne(&movie, whereVariable, whereValue)
+	if err != nil {
+		return nil, err.Error(), http.StatusInternalServerError
+	}
+
+	return movie, models.Success, http.StatusOK
+}
+
+func (u *uc) UnVoteMovie(c *gin.Context, movieId int) (string, int) {
+	movie, statusMessage, statusCode := u.GetMovie(c, movieId)
+	if statusCode != 200 {
+		return statusMessage, statusCode
+	}
+
+	userData := c.MustGet("userData").(jwt.MapClaims)
+	userId := userData["id"].(float64)
+	isExistVote := false
+	indexVoted := 0
+
+	for i := 0; i < len(movie.Voted); i++ {
+		if movie.Voted[i] == int64(userId) {
+			isExistVote = true
+			indexVoted = i
+			break
+		}
+	}
+
+	if !isExistVote {
+		return "You do not vote this movie", http.StatusOK
+	}
+
+	movie.Voted = helpers.RemoveElement(indexVoted, movie.Voted)
+
+	err := u.repo.VoteMovie(movieId, movie)
+	if err != nil {
+		return err.Error(), http.StatusBadRequest
+	}
+
+	return models.Success, http.StatusOK
 }

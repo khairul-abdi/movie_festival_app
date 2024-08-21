@@ -1,14 +1,12 @@
 package usecases
 
 import (
-	"fmt"
 	"movie_festival_app/packages"
 	"movie_festival_app/src/helpers"
 	"movie_festival_app/src/models"
 	"net/http"
 	"time"
 
-	"github.com/beego/beego/v2/adapter/validation"
 	"github.com/gin-gonic/gin"
 )
 
@@ -48,7 +46,6 @@ func (u *uc) UserLogin(c *gin.Context) (map[string]interface{}, string, int) {
 
 	err := u.repo.FindOne(&User, whereVariable, whereValue)
 	if err != nil {
-		fmt.Println("Error: ", err)
 		if err.Error() == "record not found" {
 			return nil, "email not registered", http.StatusUnauthorized
 		}
@@ -75,28 +72,15 @@ func (u *uc) UpdateUser(c *gin.Context, userID uint) (map[string]interface{}, st
 		entity  models.User
 	)
 	c.ShouldBindJSON(&newUser)
-	valid := validation.Validation{}
-	b, err := valid.Valid(&newUser)
-	if err != nil {
-		return nil, "Internal Server Error", http.StatusInternalServerError
-	}
 
-	if !b {
-		// validation does not pass
-		var message string
-		for i, err := range valid.Errors {
-			if i == 0 {
-				message = err.Message
-			} else {
-				message += ", " + err.Message
-			}
-		}
-		return nil, message, http.StatusBadRequest
+	message, statusCode := helpers.ValidationForm(&newUser)
+	if statusCode != 200 {
+		return nil, message, statusCode
 	}
 
 	whereVariable := "id = ?"
 	whereValue := userID
-	err = u.repo.FindOne(&oldUser, whereVariable, whereValue)
+	err := u.repo.FindOne(&oldUser, whereVariable, whereValue)
 	if err != nil {
 		return nil, "Data Not Found", http.StatusBadRequest
 	}

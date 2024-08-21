@@ -5,7 +5,6 @@ import (
 	"movie_festival_app/src/helpers"
 	"movie_festival_app/src/models"
 
-	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 )
 
@@ -68,12 +67,6 @@ func (r *repo) FindAllMovies(param models.ParamMovie) (movies []models.Movie, er
 }
 
 func (r *repo) FindAllMoviesMostViewed() (movies []models.Movie, err error) {
-
-	sql := r.db.ToSQL(func(tx *gorm.DB) *gorm.DB {
-		return tx.Preload(clause.Associations).Order("array_length(viewed, 1) DESC").Find(&movies)
-	})
-
-	fmt.Println("RAW QUERY=> ", sql)
 	err = r.db.Preload(clause.Associations).Order("array_length(viewed, 1) DESC").Find(&movies).Error
 	if err != nil {
 		return nil, err
@@ -84,6 +77,23 @@ func (r *repo) FindAllMoviesMostViewed() (movies []models.Movie, err error) {
 
 func (r *repo) SearchMovies(page, limit int) (movies []models.Movie, err error) {
 	err = r.db.Preload(clause.Associations).Scopes(helpers.NewPaginate(limit, page).PaginatedResult).Find(&movies).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return
+}
+
+func (r *repo) TrackMovieViewership() (movies []models.Movie, err error) {
+	err = r.db.Preload(clause.Associations).Raw(`
+		SELECT 
+			m.*,
+			array_length(m.viewed,1)
+		FROM 
+			public."movies" m
+		ORDER BY array_length(m.viewed,1) DESC;
+	`).Find(&movies).Error
+
 	if err != nil {
 		return nil, err
 	}

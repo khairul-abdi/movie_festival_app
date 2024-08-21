@@ -21,6 +21,8 @@ type Repo interface {
 	UpdateMovie(movieId int, movie *models.Movie) error
 	FindAllMoviesMostViewed() ([]models.Movie, error)
 	SearchMovies(page, limit int) ([]models.Movie, error)
+	TrackMovieViewership() ([]models.Movie, error)
+	VoteMovie(movieId int, movie *models.Movie) error
 }
 
 func NewRepo(db *gorm.DB) Repo {

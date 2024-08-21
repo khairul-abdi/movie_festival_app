@@ -20,3 +20,11 @@ func (r *repo) UpdateMovie(movieId int, movie *models.Movie) error {
 	}
 	return nil
 }
+
+func (r *repo) VoteMovie(movieId int, movie *models.Movie) error {
+	err := r.db.Model(&models.Movie{}).Where("id = ?", movieId).Updates(movie).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

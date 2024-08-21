@@ -33,6 +33,9 @@ func (routes *route) RouterGroup() http.Handler {
 		//All Users APIs
 		movie.POST("/list-all-movie", routes.ctrl.GetMovies)
 		movie.GET("/search-movie", routes.ctrl.SearchMovies)
+		movie.GET("/track-movie-viewership", routes.ctrl.TrackMovieViewership)
+		movie.POST("/vote-movie/:movieId", routes.ctrl.VoteMovie)
+		movie.POST("/unvote-movie/:movieId", routes.ctrl.UnVoteMovie)
 
 	}
 

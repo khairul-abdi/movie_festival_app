@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"movie_festival_app/packages"
 	"net/http"
 	"strconv"
@@ -15,7 +14,6 @@ func (ctrl *ctrl) GetMovies(c *gin.Context) {
 }
 
 func (ctrl *ctrl) StoreMovie(c *gin.Context) {
-	fmt.Println("MASUKKKKKK")
 	message, code := ctrl.uc.StoreMovie(c)
 	packages.Response(c, message, code, nil)
 }
@@ -53,9 +51,32 @@ func (ctrl *ctrl) SearchMovies(c *gin.Context) {
 	if page == 0 {
 		page = 1
 	}
-	fmt.Println("PAGE:", page)
-	fmt.Println("LIMIT:", limit)
 
 	res, message, code := ctrl.uc.SearchMovies(c, page, limit)
 	packages.Response(c, message, code, res)
+}
+
+func (ctrl *ctrl) TrackMovieViewership(c *gin.Context) {
+	res, message, code := ctrl.uc.TrackMovieViewership(c)
+	packages.Response(c, message, code, res)
+}
+
+func (ctrl *ctrl) VoteMovie(c *gin.Context) {
+	movieIdInt, err := strconv.Atoi(c.Param("movieId"))
+	if err != nil {
+		packages.Response(c, err.Error(), http.StatusInternalServerError, nil)
+	}
+
+	message, code := ctrl.uc.VoteMovie(c, movieIdInt)
+	packages.Response(c, message, code, nil)
+}
+
+func (ctrl *ctrl) UnVoteMovie(c *gin.Context) {
+	movieIdInt, err := strconv.Atoi(c.Param("movieId"))
+	if err != nil {
+		packages.Response(c, err.Error(), http.StatusInternalServerError, nil)
+	}
+
+	message, code := ctrl.uc.UnVoteMovie(c, movieIdInt)
+	packages.Response(c, message, code, nil)
 }
